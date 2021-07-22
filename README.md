@@ -12,7 +12,8 @@ Spring Security Basic Authentication
      
      
 Whitelist some URLs using ANT matchers
-     - in case we want to whitelist certain URLs in our application so that the user does not have to provide a username 
+     
+     * in case we want to whitelist certain URLs in our application so that the user does not have to provide a username 
      and password to access it, we can use antmatchers().permitAll()
      
      
