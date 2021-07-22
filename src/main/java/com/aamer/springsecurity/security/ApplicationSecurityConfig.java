@@ -10,6 +10,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableWebSecurity
 public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
 
+    // authorize any request and get it authenticated using spring security's basic auth feature.
+    // this will have the browser username and password popup come up for authenticating the request.
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http

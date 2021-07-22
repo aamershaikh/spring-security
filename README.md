@@ -8,6 +8,7 @@ Spring Security
      - client sends a get request along with base 64 username:password, server sends a 200 status.
      without the username and password the resource is not accessible.
      - within the browser we get the username and passowrd pop up.
+     -Refer class ApplicationSecurityConfig
      
      
      *whitelist some URLs using ant matchers*
