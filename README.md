@@ -1,4 +1,4 @@
-Spring Security
+Spring Security Basic Authentication
      - dependency " spring-boot-starter-security " will add a login form based authentication which is the basic password based login control
      provided.
      
@@ -11,8 +11,9 @@ Spring Security
      -Refer class ApplicationSecurityConfig
      
      
-     *whitelist some URLs using ant matchers*
-     
+Whitelist some URLs using ANT matchers
+     - in case we want to whitelist certain URLs in our application so that the user does not have to provide a username 
+     and password to access it, we can use antmatchers().permitAll()
      
      
      
