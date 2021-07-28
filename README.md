@@ -16,7 +16,19 @@ Whitelist some URLs using ANT matchers
      * in case we want to whitelist certain URLs in our application so that the user does not have to provide a username 
      and password to access it, we can use antmatchers().permitAll()
      
-Maintaning users in a Postgres database
+Maintaining users in InMemoryUserDetails
+    
+    * override userDetailsService() from WebSecurityConfigurerAdapter
+    * create a user (annasmith) and password
+    * create a PasswordConfig which returns the encrypted password
+    * use the encrypted password to build the username and password
+    
+Roles and Permissions
+    
+    * 
+    
+
+
      
      
      
