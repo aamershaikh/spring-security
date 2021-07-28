@@ -25,11 +25,14 @@ Maintaining users in InMemoryUserDetails
     
 Roles and Permissions
     
-    * 
+    
+    * Role based authentication : For an api to be accessed from a particular role only. use ant matcher with the api url from controller (/api/v1/student)
+                      
+                      antMatchers("/api/**").hasRole(ApplicationUserRole.STUDENT.name())
     
 
 
-     
+    
      
      
      
