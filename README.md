@@ -1,5 +1,6 @@
 Spring Security Basic Authentication
-     - dependency " spring-boot-starter-security " will add a login form based authentication which is the basic password based login control
+ 
+ Dependency " spring-boot-starter-security " will add a login form based authentication which is the basic password based login control
      provided.
      
      *Basic Auth in Spring boot*
@@ -26,12 +27,24 @@ Maintaining users in InMemoryUserDetails
 Roles and Permissions
     
     
-    * Role based authentication : For an api to be accessed from a particular role only. use ant matcher with the api url from controller (/api/v1/student)
+    * Role based authentication- using hasRole(): For an api to be accessed from a particular role only. use ant matcher with the api url from controller (/api/v1/student)
                       
                       antMatchers("/api/**").hasRole(ApplicationUserRole.STUDENT.name())
     
 
-
+    * Permission based authentication- using hasAuthority() : use hasAuthority() to define what method calls are allowed for an API for what all persmissions
+    
+    
+                      // for permission based authentication use hasAuthority()
+                      // for example, linda is an admin, she has permissions to read and write a course. 
+                      // So we can define in the hasAuthority() method, the user with the specific permissions can access the api
+                      .antMatchers(HttpMethod.GET, "/management/api/**").hasAnyRole(ApplicationUserRole.ADMIN.name(), ApplicationUserRole.ADMINTRAINEE.name())
+                      .antMatchers(HttpMethod.POST,"/management/api/**").hasAuthority(ApplicationUserPermissions.COURSE_WRITE.name())
+                      .antMatchers(HttpMethod.PUT, "/management/api/**").hasAuthority(ApplicationUserPermissions.COURSE_WRITE.name())
+                      .antMatchers(HttpMethod.DELETE, "/management/api/**").hasAuthority(ApplicationUserPermissions.COURSE_WRITE.name())
+                        
+                      ApplicationRoles.getAuthorties() method will provide the permissions to the respective roles at runtime.
+                      In the Application security config class, every user is role aware. in order to have the authorities assigned at runtime, we will use the grantedAuthorities() method. 
     
      
      
