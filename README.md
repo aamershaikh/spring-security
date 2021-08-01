@@ -49,7 +49,7 @@ Roles and Permissions
 Order of antMatchers matters
 
 
-Use of permission based authentication on a method level with annotations - @preAuthorize
+Use of permission based authentication on a method level with annotations - @preAuthorize - alternate to antMatchers()
 
      
      
