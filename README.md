@@ -45,8 +45,12 @@ Roles and Permissions
                         
                       ApplicationRoles.getAuthorties() method will provide the permissions to the respective roles at runtime.
                       In the Application security config class, every user is role aware. in order to have the authorities assigned at runtime, we will use the grantedAuthorities() method. 
-    
-     
+ 
+Order of antMatchers matters
+
+
+Use of permission based authentication on a method level with annotations - @preAuthorize
+
      
      
      
