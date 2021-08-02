@@ -48,11 +48,24 @@ Roles and Permissions
  
 Order of antMatchers matters
 
-
 Use of permission based authentication on a method level with annotations - @preAuthorize - alternate to antMatchers()
 
+Understanding csrf - cross site request forgery
+                    
+                      *  refer the screenshot below
+                      
      
-     
-     
-     
+Json Web Token
+              
+              Adv      * Fast
+                       * Stateless - no need to maintain session
+                       * Used across many services
+                       
+                      
+              DisAdv    
+                       * compromised secret key
+                       * no visibility to logged in users
+                       * token can be stolen
+              
+              Consists of header, payload and verfify signature sections         
      
